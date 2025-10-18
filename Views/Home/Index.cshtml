@@ -1,9 +1,41 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Utility Functions";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core
-        or dont i dont care but were serving nick for dinner</a>.</p>
+<h2>Utility Functions</h2>
+
+<div style="max-width:500px;margin:auto;font-family:Arial,sans-serif;">
+
+    <!-- Vowel Counter -->
+    <section style="margin-bottom:30px;">
+        <h3>Vowel Counter</h3>
+        <form asp-action="CountVowels" method="post">
+            <input type="text" name="inputText" class="form-control" placeholder="Enter text" required />
+            <button type="submit" class="btn btn-primary mt-2">Count Vowels</button>
+        </form>
+        <p class="mt-2 text-success">@ViewBag.VowelResult</p>
+    </section>
+
+    <!-- Leap Year Checker -->
+    <section style="margin-bottom:30px;">
+        <h3>Leap Year Checker</h3>
+        <form asp-action="CheckLeapYear" method="post">
+            <input type="number" name="year" class="form-control" placeholder="Enter year" required />
+            <button type="submit" class="btn btn-primary mt-2">Check Leap Year</button>
+        </form>
+        <p class="mt-2 text-success">@ViewBag.LeapResult</p>
+    </section>
+
+    <!-- Palindrome Checker -->
+    <section>
+        <h3>Palindrome Checker</h3>
+        <form asp-action="CheckPalindrome" method="post">
+            <input type="number" name="number" class="form-control" placeholder="Enter number" required />
+            <button type="submit" class="btn btn-primary mt-2">Check Palindrome</button>
+        </form>
+        <p class="mt-2 text-success">@ViewBag.PalindromeResult</p>
+    </section>
+
 </div>
+
+
