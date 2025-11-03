@@ -31,5 +31,28 @@ namespace WebApplication1.services
             Array.Reverse(arr);
             return s == new string(arr);
         }
+
+        public static bool IsPalindrome(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return false;
+
+            // Normalize to lowercase so "Radar" also works
+            input = input.ToLower();
+
+            int left = 0;
+            int right = input.Length - 1;
+
+            while (left < right)
+            {
+                if (input[left] != input[right])
+                    return false;
+
+                left++;
+                right--;
+            }
+
+            return true;
+        }
     }
 }

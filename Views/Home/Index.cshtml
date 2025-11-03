@@ -30,11 +30,12 @@
     <section>
         <h3>Palindrome Checker</h3>
         <form asp-action="CheckPalindrome" method="post">
-            <input type="number" name="number" class="form-control" placeholder="Enter number" required />
+            <input type="text" name="inputValue" class="form-control" placeholder="Enter text or number" required />
             <button type="submit" class="btn btn-primary mt-2">Check Palindrome</button>
         </form>
         <p class="mt-2 text-success">@ViewBag.PalindromeResult</p>
     </section>
+
 
 </div>
 

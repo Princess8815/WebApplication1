@@ -41,12 +41,39 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult CheckPalindrome(int number)
+        [HttpPost]
+        public IActionResult CheckPalindrome(string inputValue)
         {
-            bool isPalindrome = UtilityServices.IsPalindrome(number);
-            ViewBag.PalindromeResult = isPalindrome ? $"{number} is a palindrome." : $"{number} is not a palindrome.";
+            if (string.IsNullOrWhiteSpace(inputValue))
+            {
+                ViewBag.PalindromeResult = "Please enter a value.";
+                return View("Index");
+            }
+
+            bool isPalindrome;
+            string typeDetected;
+
+            // Detect if input is a pure number (integer)
+            if (int.TryParse(inputValue, out int number))
+            {
+                typeDetected = "number";
+                isPalindrome = UtilityServices.IsPalindrome(number);
+            }
+            else
+            {
+                typeDetected = "text";
+                isPalindrome = UtilityServices.IsPalindrome(inputValue);
+            }
+
+            // Build a nice message for the user
+            if (isPalindrome)
+                ViewBag.PalindromeResult = $"The {typeDetected} \"{inputValue}\" is a palindrome!";
+            else
+                ViewBag.PalindromeResult = $"The {typeDetected} \"{inputValue}\" is not a palindrome.";
+
             return View("Index");
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
