@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourProject.tests", "..\You
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTest", "..\IntegrationTest\IntegrationTest.csproj", "{AA6A76B7-C6BB-4CA2-AD9D-4F0D91D57811}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69B045C5-9D0C-473B-8B53-96972C5713BD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C443A636-21A7-4251-A665-DCDC5781B8F5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{AA6A76B7-C6BB-4CA2-AD9D-4F0D91D57811} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31FA8D72-6077-4BF5-AFA1-C1409600B5AD}
